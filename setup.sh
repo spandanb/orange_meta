@@ -38,6 +38,8 @@ git clone https://github.com/spandanb/orange_vino.git vino
 
 git clone https://github.com/spandanb/orange_ansible_wrapper.git ansible_wrapper
 
+git clone https://github.com/spandanb/sla_orc.git docker
+
 #create aux files
 touch __init__.py
 
