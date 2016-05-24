@@ -9,6 +9,16 @@ if [ -d "$TOPDIR" ]; then
     exit
 fi
 
+#create a virtual env
+ENVNAME=vinoenv
+virtualenv --system-site-packages $ENVNAME
+
+source $ENVNAME/bin/activate
+
+pip install setuptools
+pip install boto3
+pip install ansible
+
 mkdir $TOPDIR
 cd $TOPDIR
 
@@ -33,11 +43,5 @@ setup(
         packages = find_packages()
 )
 EOF
-
-#create a virtual env
-ENVNAME=vinoenv
-virtualenv --system-site-packages $ENVNAME
-
-source $ENVNAME/bin/activate
 
 python setup.py develop
