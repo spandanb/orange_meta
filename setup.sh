@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Sets up the Vino env.
-TOPDIR=~/orange
+TOPDIR=~/orangex
+CLIENTMACH=true
 
 #Check if top dir exists
 if [ -d "$TOPDIR" ]; then
@@ -9,9 +10,14 @@ if [ -d "$TOPDIR" ]; then
     exit
 fi
 
-sudo apt-get install pip git -y
+mkdir $TOPDIR
+cd $TOPDIR
 
+if [ "$CLIENTMACH" = false ]; then
+sudo apt-get update
+sudo apt-get install python-pip python-dev build-essential git -y
 sudo pip install virtualenv
+fi
 
 #create a virtual env
 ENVNAME=vinoenv
@@ -19,12 +25,11 @@ virtualenv --system-site-packages $ENVNAME
 
 source $ENVNAME/bin/activate
 
+#TODO: Put these as dependencies to orange
 pip install setuptools
 pip install boto3
 pip install ansible
-
-mkdir $TOPDIR
-cd $TOPDIR
+pip install requests
 
 #Get git repos
 git clone https://github.com/spandanb/orange_multi multi
