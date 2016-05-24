@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Sets up the Vino env.
-TOPDIR=~/orangex
+TOPDIR=~/orange
 CLIENTMACH=true
 
 #Check if top dir exists
