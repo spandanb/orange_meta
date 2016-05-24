@@ -9,6 +9,10 @@ if [ -d "$TOPDIR" ]; then
     exit
 fi
 
+sudo apt-get install pip git -y
+
+sudo pip install virtualenv
+
 #create a virtual env
 ENVNAME=vinoenv
 virtualenv --system-site-packages $ENVNAME
