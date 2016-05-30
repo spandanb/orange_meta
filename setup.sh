@@ -3,7 +3,7 @@
 #Sets up the Vino env.
 TOPDIR=~/orange
 #this is the client machine, i.e. does the user have sudo access
-CLIENTMACH=false
+CLIENTMACH=true
 
 #Check if top dir exists
 if [ -d "$TOPDIR" ]; then
