@@ -8,7 +8,7 @@ CLIENTMACH=true
 #Check if top dir exists
 if [ -d "$TOPDIR" ]; then
     echo "$TOPDIR exists"
-    exit
+    rm -rf $TOPDIR
 fi
 
 mkdir $TOPDIR
